@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     public float MaxHealth;
     public float CurrentHealth;
 
+    public GameObject HealthUI1, HealthUI2, HealthUI3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CurrentHealth = MaxHealth;
+        PlayerDeath();
     }
 
     void OnTriggerEnter2D(Collider2D target)
@@ -26,11 +28,11 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Health picked up");
 
-           // if (CurrentHealth < MaxHealth)
-           // {
-                   Destroy(target.gameObject);
-                   CurrentHealth += 1;
-           // }
+           if (CurrentHealth < MaxHealth)
+           {
+                Destroy(target.gameObject);
+                CurrentHealth += 1;
+           }
         }
     }
 
@@ -45,13 +47,40 @@ public class PlayerHealth : MonoBehaviour
 
    void PlayerDeath()
    {
-        if(CurrentHealth == 0)
+        if (CurrentHealth <= 2)
+        {
+            HealthUI3.SetActive(false);
+        }
+        else
+        {
+            HealthUI3.SetActive(true);
+        }
+
+        if (CurrentHealth <= 1)
+        {
+            HealthUI2.SetActive(false);
+        }
+        else
+        {
+            HealthUI2.SetActive(true);
+        }
+
+        if (CurrentHealth <= 0)
+        {
+            HealthUI1.SetActive(false);
+        }
+        else
+        {
+            HealthUI1.SetActive(true);
+        }
+
+
+        if (CurrentHealth == 0)
         {
             Destroy(gameObject);
 
         }
 
-
-    }
+   }
 
 }
