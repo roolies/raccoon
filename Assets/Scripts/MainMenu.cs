@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("PlayerMecanics");
+        SceneManager.LoadScene("SampleScene");
         Time.timeScale = 1;
     }
 

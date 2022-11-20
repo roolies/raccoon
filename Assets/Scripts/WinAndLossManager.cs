@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuInput : MonoBehaviour
+public class WinAndLossManager : MonoBehaviour
 {
-    public PauseScript pauseScript;
-
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -22,8 +20,4 @@ public class MenuInput : MonoBehaviour
         Application.Quit();
     }
 
-    public void Resume()
-    {
-        pauseScript.gamePaused = false;
-    }
 }

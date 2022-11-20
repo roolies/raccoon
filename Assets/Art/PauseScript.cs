@@ -23,18 +23,7 @@ public class PauseScript : MonoBehaviour
         if (context.performed)
         {
             gamePaused = !gamePaused;
-            if (gamePaused == true)
-            {
-                Time.timeScale = 0;
-                pauseCanvas.gameObject.SetActive(true);
-                gameCanvas.gameObject.SetActive(false);
-            }
-            else
-            {
-                Time.timeScale = 1;
-                pauseCanvas.gameObject.SetActive(false);
-                gameCanvas.gameObject.SetActive(true);
-            }
+           
 
 
 
@@ -44,10 +33,21 @@ public class PauseScript : MonoBehaviour
 
     void Update()
     {
- 
 
-           
+        if (gamePaused == true)
+        {
+            Time.timeScale = 0;
+            pauseCanvas.gameObject.SetActive(true);
+            gameCanvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pauseCanvas.gameObject.SetActive(false);
+            gameCanvas.gameObject.SetActive(true);
+        }
 
-       
+
+
     }
 }
