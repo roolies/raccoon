@@ -7,6 +7,7 @@ public class ThrowableObject : MonoBehaviour
     
     private float TimeLeft = 1.5f;
     public bool TimerOn;
+    
 
     // Start is called before the first frame update
     void Start()
