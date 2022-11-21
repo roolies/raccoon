@@ -3147,20 +3147,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'WASD - Move
-
-    F - Throw Trash
-
-    space - jump
-
-    other stuff
-
-    other
-    stuff
-
-
-    collect trash and use it to defeat the enemy rats! the haha meal
-    boxes restore health.'
+  m_text: "WASD/Joystick - Move\nF / X- Throw Trash \nspace / A - jump\np/options-
+    pause\n\ncollect trash and use it to defeat the enemy rats! the haha meal boxes
+    restore health."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f0dd120e04bbe7489f7be59afbd7b85, type: 2}
   m_sharedMaterial: {fileID: -4565370425243614368, guid: 8f0dd120e04bbe7489f7be59afbd7b85, type: 2}
