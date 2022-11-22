@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Win
+  - Ground
+  - Enemy
+  - Bullet
+  - Health
+  - AmmoPickUp
+  - ScorePickup
+  - EnemyBounds
   layers:
   - Default
   - TransparentFX
@@ -12,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Enemy Bounds
   - 
   - 
   - 
