@@ -5,7 +5,10 @@ using UnityEngine;
 public class PointPickUp : MonoBehaviour
 {
     public ScoreScript scoreScript;
-  
+
+    public ParticleSystem collisionParticleSystem;
+    
+
 
     void OnTriggerEnter2D(Collider2D target)
     {
@@ -14,7 +17,11 @@ public class PointPickUp : MonoBehaviour
             Debug.Log("Score picked up");
             AddScore();
             Destroy(target.gameObject);
+            var em = collisionParticleSystem.emission;
+            var dur = collisionParticleSystem.duration;
 
+            em.enabled = true;
+            collisionParticleSystem.Play();
 
         }
     }

@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject HealthUI1, HealthUI2, HealthUI3;
 
+    public ParticleSystem collisionParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +35,19 @@ public class PlayerHealth : MonoBehaviour
            {
                 Destroy(target.gameObject);
                 CurrentHealth += 1;
-           }
+                PlayPartical();
+
+
+            }
         }
+    }
+    public void PlayPartical()
+    {
+        var em = collisionParticleSystem.emission;
+        var dur = collisionParticleSystem.duration;
+
+        em.enabled = true;
+        collisionParticleSystem.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

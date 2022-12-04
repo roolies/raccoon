@@ -59,7 +59,7 @@ public class ThrowableObject : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy touched");
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             
 
         }

@@ -10,6 +10,8 @@ public class Ammo : MonoBehaviour
 
     public TextMeshProUGUI AmmoUI;
 
+    public ParticleSystem collisionParticleSystem;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,12 @@ public class Ammo : MonoBehaviour
             // {
              Destroy(target.gameObject);
              CurrentAmmo += 1;
+
+            var em = collisionParticleSystem.emission;
+            var dur = collisionParticleSystem.duration;
+
+            em.enabled = true;
+            collisionParticleSystem.Play();
             // }
         }
     }
