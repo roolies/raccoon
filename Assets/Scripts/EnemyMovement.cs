@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     }
      
      // Update is called once per frame
-    void Update() 
+    void FixedUpdate() 
     {
         range = Vector2.Distance(enemyRB.transform.position, playerRB.transform.position);
 
@@ -71,6 +71,7 @@ public class EnemyMovement : MonoBehaviour
 
     public IEnumerator Chase()
     {
+
         yield return new WaitForSeconds(3.0f);
 
         activeChase = false;
