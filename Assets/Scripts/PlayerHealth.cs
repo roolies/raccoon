@@ -11,12 +11,16 @@ public class PlayerHealth : MonoBehaviour
     public GameObject HealthUI1, HealthUI2, HealthUI3;
 
     public ParticleSystem collisionParticleSystem;
+    AudioSource audioSource;
+    public AudioClip healthClip;
+    public AudioClip damageClip;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         //CurrentHealth;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
+        Weapon weapon = GetComponent<Weapon>();
+
         if (target.tag == "Health")
         {
             Debug.Log("Health picked up");
@@ -36,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(target.gameObject);
                 CurrentHealth += 1;
                 PlayPartical();
-
+                PlaySound(healthClip);
 
             }
         }
@@ -56,6 +62,7 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Enemy touched");
             CurrentHealth -= 1;
+            PlaySound(damageClip);
         }
     }
 
@@ -97,5 +104,10 @@ public class PlayerHealth : MonoBehaviour
         }
 
    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
 
 }

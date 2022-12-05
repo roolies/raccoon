@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 public class Weapon : MonoBehaviour
 {
@@ -24,13 +25,18 @@ public class Weapon : MonoBehaviour
 	public float setTime;
 	public float TimeLeft;
 	public bool TimerOn;
+    AudioSource audioSource;
+    public AudioClip throwClip;
+	public AudioClip boostClip;
 
-	void Start()
+    void Start()
 	{
 		CanNumber = 1;
 
 		setTime = 5;
-	}
+
+        audioSource = GetComponent<AudioSource>();
+    }
 
 	void Update()
 	{
@@ -74,7 +80,8 @@ public class Weapon : MonoBehaviour
             {
 				StartCoroutine(Shoot());
 				CanNumber += 1;
-			}
+                PlaySound(throwClip);
+            }
 
 			
 
@@ -207,10 +214,16 @@ public class Weapon : MonoBehaviour
 			em.enabled = true;
 			collisionParticleSystem.Play();
 			TimeLeft = setTime;
+            PlaySound(boostClip);
 
-		}
+        }
 
 	}
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
 
 
 

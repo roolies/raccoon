@@ -12,11 +12,14 @@ public class Ammo : MonoBehaviour
 
     public ParticleSystem collisionParticleSystem;
 
+    AudioSource audioSource;
+    public AudioClip ammoClip;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,7 +44,13 @@ public class Ammo : MonoBehaviour
 
             em.enabled = true;
             collisionParticleSystem.Play();
+            PlaySound(ammoClip);
             // }
         }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

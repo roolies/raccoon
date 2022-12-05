@@ -7,8 +7,15 @@ public class PointPickUp : MonoBehaviour
     public ScoreScript scoreScript;
 
     public ParticleSystem collisionParticleSystem;
-    
 
+    AudioSource audioSource;
+    public AudioClip pointClip;
+
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void OnTriggerEnter2D(Collider2D target)
     {
@@ -22,6 +29,7 @@ public class PointPickUp : MonoBehaviour
 
             em.enabled = true;
             collisionParticleSystem.Play();
+            PlaySound(pointClip);
 
         }
     }
@@ -29,5 +37,10 @@ public class PointPickUp : MonoBehaviour
     {
         scoreScript.ScoreValue += 1;
         scoreScript.score.text = "Score: " + scoreScript.ScoreValue.ToString();
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }
