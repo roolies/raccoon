@@ -63,6 +63,8 @@ public class EnemyMovement : MonoBehaviour
 
     public void Flip()
     {
+        StartCoroutine(DisableCollider());
+
         activePatrol = false;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         patrolSpeed *= -1;
@@ -71,9 +73,17 @@ public class EnemyMovement : MonoBehaviour
 
     public IEnumerator Chase()
     {
-
         yield return new WaitForSeconds(3.0f);
 
         activeChase = false;
+    }
+
+    public IEnumerator DisableCollider()
+    {
+        enemyCollider.enabled = false;
+
+        yield return new WaitForSeconds(1.0f);
+
+        enemyCollider.enabled = true;
     }
 }

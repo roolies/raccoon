@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3366496535942892379}
   - component: {fileID: -745328993946777696}
   m_Layer: 0
-  m_Name: CanObject
+  m_Name: Can
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
