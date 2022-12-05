@@ -61,21 +61,21 @@ public class BatMovement : MonoBehaviour
             if (num == 1)
             {
                 GameObject NewCan = Instantiate(Can, shootPosition.position, Quaternion.identity);
-                Can.tag = "Default";
+                Can.tag = "BatTrash";
 			    NewCan.GetComponent<Rigidbody2D>().velocity = new Vector2(1.0f * Time.fixedDeltaTime, 0f);
 			    NewCan.transform.localScale = new Vector2(NewCan.transform.localScale.x, NewCan.transform.localScale.y);
             }
             else if (num == 2)
             {
                 GameObject NewBanana = Instantiate(BananaPeel, shootPosition.position, Quaternion.identity);
-                BananaPeel.tag = "Default";
+                BananaPeel.tag = "BatTrash";
 			    NewBanana.GetComponent<Rigidbody2D>().velocity = new Vector2(1.0f * Time.fixedDeltaTime, 0f);
 			    NewBanana.transform.localScale = new Vector2(NewBanana.transform.localScale.x, NewBanana.transform.localScale.y);
             }
             else if (num == 3)
             {
                 GameObject NewApple = Instantiate(AppleCore, shootPosition.position, Quaternion.identity);
-                AppleCore.tag = "Default";
+                AppleCore.tag = "BatTrash";
 			    NewApple.GetComponent<Rigidbody2D>().velocity = new Vector2(1.0f * Time.fixedDeltaTime, 0f);
 			    NewApple.transform.localScale = new Vector2(NewApple.transform.localScale.x, NewApple.transform.localScale.y);
             }
