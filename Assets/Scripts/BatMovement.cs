@@ -88,7 +88,7 @@ public class BatMovement : MonoBehaviour
     {
         canThrowTrash = false;
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(7.0f);
 
         canThrowTrash = true;
     }
